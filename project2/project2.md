@@ -22,21 +22,21 @@ Please reference [**Project1**](https://github.com/Kennyfernando/Devops-Beginner
 
 - Right click and select **Inspect** from the drop down menu.
 
-![img 01](<pj2 10.png>)
-
+![img01](<pj2 10.png>)
+ 
 - Click on the Network tab and then click Download button.
 
-![img 02](network.png)
+![img02](network.png)
 
 - Right click on the website name, select Copy and click on Copy link address.
 
-![img 03](<Screenshot 2024-08-22 024711.png>)
+![img03](<Screenshot 2024-08-22 024711.png>)
 
 - To install the unzip tool, run the following command: sudo apt install unzip.
 
 - Execute the command to download and unzip your website files `sudo curl -o /var/www/html/2098_health.zip https://www.tooplate.com/zip-templates/2098_health.zip && sudo unzip -d /var/www/html/ /var/www/html/2098_health.zip && sudo rm -f /var/www/html/2098_health.zip`.
 
-![img 04](<Screenshot 2024-08-22 031451.png>)
+![img04](<Screenshot 2024-08-22 031451.png>)
 
 ---
 
@@ -77,7 +77,7 @@ Replace the placeholders in the code with your own website URL. For example, sub
 
 - To set up your website's configuration, start by creating a new file in the Nginx sites-available directory. Use the following command to open a blank file in a text editor: **`sudo nano /etc/nginx/sites-available/health`**
 
-![alt text](<Screenshot 2024-08-22 043110.png>)
+![img05](<Screenshot 2024-08-22 043110.png>)
 
 - Copy and paste the following code into the open text editor.
 
