@@ -22,7 +22,7 @@ Please reference [**Project1**](https://github.com/Kennyfernando/Devops-Beginner
 
 - Right click and select **Inspect** from the drop down menu.
 
-![img01](<pj2 10.png>)
+![img01](<1.png>)
  
 - Click on the Network tab and then click Download button.
 
