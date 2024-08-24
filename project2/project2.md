@@ -22,21 +22,21 @@ Please reference [**Project1**](https://github.com/Kennyfernando/Devops-Beginner
 
 - Right click and select **Inspect** from the drop down menu.
 
-![img01](<1.png>)
+![1](img2/1.png)
  
 - Click on the Network tab and then click Download button.
 
-![img02](network.png)
+![2](img2/2.png)
 
 - Right click on the website name, select Copy and click on Copy link address.
 
-![img03](<Screenshot 2024-08-22 024711.png>)
+![3](img2/3.png)
 
 - To install the unzip tool, run the following command: sudo apt install unzip.
 
 - Execute the command to download and unzip your website files `sudo curl -o /var/www/html/2098_health.zip https://www.tooplate.com/zip-templates/2098_health.zip && sudo unzip -d /var/www/html/ /var/www/html/2098_health.zip && sudo rm -f /var/www/html/2098_health.zip`.
 
-![img04](<Screenshot 2024-08-22 031451.png>)
+![4](img2/4.png)
 
 ---
 
@@ -77,7 +77,7 @@ Replace the placeholders in the code with your own website URL. For example, sub
 
 - To set up your website's configuration, start by creating a new file in the Nginx sites-available directory. Use the following command to open a blank file in a text editor: **`sudo nano /etc/nginx/sites-available/health`**
 
-![img05](<Screenshot 2024-08-22 043110.png>)
+![5](img2/5.png)
 
 - Copy and paste the following code into the open text editor.
 
@@ -97,11 +97,11 @@ server {
 
 - Edit the `root` directive within your server block to point to the directory where your downloaded website content is stored.
 
-![alt text](<Screenshot 2024-08-22 045812.png>)
+![6](img2/6.png)
 
 - Configure your second website by creating a new file in the Nginx sites-available directory with the following command: `sudo nano /etc/nginx/sites-available/kool`.
 
-![alt text](<Screenshot 2024-08-22 044413.png>)
+![7](img2/7.png)
 
 - Copy and paste the following code into the open text editor.
 
@@ -121,17 +121,17 @@ server {
 
 - Edit the **`root`** directive within your server block to point to the directory where your downloaded website content is stored.
 
-![alt text](<Screenshot 2024-08-22 044430.png>)
+![8](img2/8.png)
 
 - Create a symbolic link for both websites by running the following command.
 `sudo ln -s /etc/nginx/sites-available/health /etc/nginx/sites-enabled/`
 `sudo ln -s /etc/nginx/sites-available/kool /etc/nginx/sites-enabled/`
 
-![alt text](<Screenshot 2024-08-22 045729.png>)
+![9](img2/9.png)
 
 - Run the `sudo nginx -t` command to check the syntax of the Nginx configuration file.
 
-![alt text](<Screenshot 2024-08-22 051647.png>)
+![10](img2/10.png)
 
 - Delete the default files in the sites-available and sites-enabled directories by executing the following commands:
 
@@ -142,7 +142,7 @@ sudo rm /etc/nginx/sites-enabled/default
 
 -  Restart the Nginx server by executing the following command: `sudo systemctl restart nginx`.
 
-![alt text](<Screenshot 2024-08-22 055919.png>)
+![11](img2/11.png)
 
 ---
 
@@ -155,41 +155,41 @@ Visit [**Project1**](https://github.com/StrangeJay/DevOps_Projects/blob/f02b9151
 
 - In route 53, select the domain name and click on **Create record**.
 
-![alt text](<Screenshot 2024-08-22 052726.png>)
+![12](img2/12.png)
 
 - Paste your **IP address①** and then click on **Create records②**.
 
-![alt text](<Screenshot 2024-08-22 053822.png>)
+![13](img2/13.png)
 
 - Click on **Create record** again, to create the record for your sub domain.
 
-![alt text](<Screenshot 2024-08-22 054443.png>)
+![14](img2/14.png)
 
 - Input the **Record name①**, paste your **IP address②** and then click on **Create records③**.
 
-![alt text](<Screenshot 2024-08-22 054716.png>)
+![15](img2/15.png)
 
 - Repeat the same process while creating your second subdomain record, and confirm that they both exist in the records list.
 
-![alt text](<Screenshot 2024-08-22 055244.png>)
+![16](img2/16.png)
 
 - Open your terminal and run **`sudo nano /etc/nginx/sites-available/kool`** to edit your settings. Enter the name of your domain and then save your settings.
 
-![alt text](<Screenshot 2024-08-22 061121.png>)
+![17](img2/17.png)
 
 - Run **`sudo nano /etc/nginx/sites-available/health`** to edit your settings. Enter the name of your domain and then save your settings.
 
-![alt text](<Screenshot 2024-08-22 060837.png>)
+![18](img2/18.png)
 
 - Restart your nginx server by running the **`sudo systemctl restart nginx`** command.
 
-![alt text](<Screenshot 2024-08-22 061317.png>)
+![19](img2/19.png)
 
 - Go to your domain name in a web browser to verify that your website is accessible.
 
-![alt text](<Screenshot 2024-08-22 061554.png>)
+![20](img2/20.png)
 
-![alt text](<Screenshot 2024-08-22 061638.png>)
+![21](img2/21.png)
 
 > [!NOTE]
 You may notice the sign that says **Not secure**. Next, you'll use certbot to obtain the SSL certificate necessary to enable HTTPS on your site.
@@ -203,25 +203,25 @@ You may notice the sign that says **Not secure**. Next, you'll use certbot to ob
 `sudo apt install python3-certbot-nginx`
 `sudo certbot --nginx`
 
-![alt text](<Screenshot 2024-08-22 062346.png>)
+![22](img2/22.png)
 
 
 - Execute the **`sudo certbot --nginx`** command to request your certificate. Follow the instructions provided by certbot and select the domain name for which you would like to activate HTTPS.
 
-![alt text](<Screenshot 2024-08-22 063154.png>)
+![23](img2/23.png)
 
 > [NOTE]
 In this case, SSL certificates were only created for **`kool.cloudghoul.online`** and **`health.cloudghoul.online`**. So, when prompted, I entered the numbers 1 and 3 (corresponding to those two domains) to select them for certificate generation. If we had also created records for **`www.kool.cloudghoul.online`** and **`www.health.cloudghoul.online`**, I could have simply pressed Enter to accept the default selection (**all available records**). If you try to create a certificate without having created an A record first, you will receive an error message.
 
 - Verify the website's SSL using the OpenSSL utility with the command: **`openssl s_client -connect health.cloudghoul.online:443`**
 
-![alt text](<Screenshot 2024-08-22 063502.png>)
+![24](img2/25.png)
 
 - Visit **`https://<domain name>`** to view your websites.
 
-![alt text](<Screenshot 2024-08-22 063717.png>)
+![25](img2/26.png)
 
-![alt text](<Screenshot 2024-08-22 063753.png>)
+![26](img2/27.png)
 
 ---
 ---
