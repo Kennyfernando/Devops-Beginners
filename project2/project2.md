@@ -131,8 +131,6 @@ server {
 
 - Run the `sudo nginx -t` command to check the syntax of the Nginx configuration file.
 
-![10](img2/10.png)
-
 - Delete the default files in the sites-available and sites-enabled directories by executing the following commands:
 
  ```
@@ -211,9 +209,9 @@ You may notice the sign that says **Not secure**. Next, you'll use certbot to ob
 ![23](img2/23.png)
 
 > [NOTE]
-In this case, SSL certificates were only created for **`kool.cloudghoul.online`** and **`health.cloudghoul.online`**. So, when prompted, I entered the numbers 1 and 3 (corresponding to those two domains) to select them for certificate generation. If we had also created records for **`www.kool.cloudghoul.online`** and **`www.health.cloudghoul.online`**, I could have simply pressed Enter to accept the default selection (**all available records**). If you try to create a certificate without having created an A record first, you will receive an error message.
+In this case, SSL certificates were only created for **`kool.nandez-tech.online`** and **`health.nandez-tech.online`**. So, when prompted, I entered the numbers 1 and 3 (corresponding to those two domains) to select them for certificate generation. If we had also created records for **`www.kool.nandez-tech.online`** and **`www.health.nandez-tech.online`**, I could have simply pressed Enter to accept the default selection (**all available records**). If you try to create a certificate without having created an A record first, you will receive an error message.
 
-- Verify the website's SSL using the OpenSSL utility with the command: **`openssl s_client -connect health.cloudghoul.online:443`**
+- Verify the website's SSL using the OpenSSL utility with the command: **`openssl s_client -connect health.nandez-tech.online:443`**
 
 ![24](img2/25.png)
 
